@@ -1,0 +1,43 @@
+body{
+    margin:0;
+}
+
+@media only screen and (max-width: 768px) {
+html,body{
+    overflow-x: hidden;
+}
+}
+.block-quote
+{
+    background-color: #F5F5F5;
+    border-left: 4px solid #E46643;
+    max-width:35vw;
+    border-radius:4px;
+    padding:4px;
+}
+
+.code{
+    background-color: #F5F5F5;
+    max-width:35vw;
+    padding:4px;
+   word-wrap: break-word;
+
+
+}
+
+#text{
+   word-wrap: break-word;
+}
+
+
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Roboto Slab', serif;
+   font-weight: bold;
+}
+
+
+body{
+    font-family: 'Roboto Slab',serif;
+    font-weight: light;
+}
