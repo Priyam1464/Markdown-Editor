@@ -2,10 +2,10 @@
   "name": "markdown",
   "version": "1.0.0",
   "description": "Markdown editor",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/base": "^5.0.0-alpha.113",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "moment": "^2.29.4",
