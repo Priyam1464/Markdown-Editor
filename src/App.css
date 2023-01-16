@@ -14,6 +14,7 @@ html,body{
     max-width:35vw;
     border-radius:4px;
     padding:4px;
+    width: 100%;
 }
 
 .code{

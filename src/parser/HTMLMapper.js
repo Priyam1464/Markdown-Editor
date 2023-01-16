@@ -25,7 +25,7 @@ export default class HtmlMapper {
           startLinkIndex - endBracketIndex === 1 &&
           endLinkIndex - startLinkIndex > 1
         ) {
-          result += `<a href='${text.substring(
+          result += `<a target="_blank" href='${text.substring(
             startLinkIndex + 1,
             endLinkIndex
           )}'>${text.substring(startBracketIndex + 1, endBracketIndex)}</a>`;
@@ -102,7 +102,9 @@ export default class HtmlMapper {
         if (element[index] !== " ") {
           result += `${element}`;
         } else {
-          result += `<h${index}>${element.substring(index + 1)}</h${index}>`;
+          result += `<h${index}>${this.formatTextWithLinks(
+            element.substring(index + 1)
+          )}</h${index}>`;
         }
       } else if (
         element.length > 4 &&
@@ -116,7 +118,9 @@ export default class HtmlMapper {
         element[0] === "*" &&
         element[0] === element[element.length - 1]
       ) {
-        result += `<em>${element.substring(1, element.length - 1)}</em>`;
+        result += `<em>${his.formatTextWithLinks(
+          element.substring(1, element.length - 1)
+        )}</em>`;
       } else if (
         element.length > 2 &&
         element[0] === ">" &&
@@ -135,7 +139,9 @@ export default class HtmlMapper {
             result += `<ul>`;
           }
 
-          result += `<li>${element.substring(2, element.length)}</li>`;
+          result += `<li>${this.formatTextWithLinks(
+            element.substring(2, element.length)
+          )}</li>`;
         }
       } else if (
         element.length > 2 &&
@@ -155,34 +161,16 @@ export default class HtmlMapper {
           element.length > 6 &&
           element.substring(element.length - 3, element.length) === "```"
         ) {
-          result += `<div class="code"><xmp>${element.substring(
-            1,
-            element.length - 1
+          result += `<div class="code"><xmp>${his.formatTextWithLinks(
+            element.substring(1, element.length - 1)
           )}</xmp></div>`;
         } else {
           codeChrEncounterd = true;
         }
-      } else if (element.indexOf("[") !== -1 && element.indexOf("]") !== -1) {
-        const startBracketIndex = element.indexOf("[");
-        const endBracketIndex = element.indexOf("]");
-        const startLinkIndex = element.indexOf("(");
-        const endLinkIndex = element.indexOf(")");
-        if (
-          endBracketIndex - startBracketIndex > 1 &&
-          startLinkIndex - endBracketIndex === 1 &&
-          endLinkIndex > startLinkIndex > 1
-        ) {
-          result += `<a href='${element.substring(
-            startLinkIndex + 1,
-            endLinkIndex
-          )}'>${element.substring(startBracketIndex + 1, endBracketIndex)}</a>`;
-        } else {
-          result += `${element}`;
-        }
       } else if (element.substring(0, 3) === "---") {
         result += `<hr>`;
       } else {
-        result += this.formatInlineCode(element);
+        result += this.formatTextWithLinks(element);
       }
     }
 
