@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-export default Theme = createTheme({
+const Theme = createTheme({
   pallete: {
     primary: {
       light: "#2B2D31",
@@ -16,3 +16,5 @@ export default Theme = createTheme({
     fontFamily: "Roboto Slab Bold",
   },
 });
+
+export default Theme;
