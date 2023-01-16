@@ -2,7 +2,7 @@ import { Stack, IconButton, Typography, TextField } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import File from "../../icons/File.svg";
+import File from "../../icons/file.svg";
 export default function Document({
   fileName,
   onFileNameChange = null,

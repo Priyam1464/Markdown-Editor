@@ -3,19 +3,18 @@ import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Stack, Divider } from "@mui/material";
 import Document from "../Document/Document";
-import Trash from "../../icons/Trash.svg";
+import Trash from "../../icons/trash.svg";
 import { useTheme } from "@mui/material/styles";
 import DeleteDialog from "../DeleteDialog/DeleteDialog";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Save } from "@mui/icons-material";
-import Logo from "../../icons/Logo.svg";
-import Cross from "../../icons/Cross.svg";
+import Logo from "../../icons/logo.svg";
+import Cross from "../../icons/cross.svg";
 
 export default function Header({
   isSaved,
