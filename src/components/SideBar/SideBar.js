@@ -6,7 +6,7 @@ import moment from "moment";
 import Document from "../Document/Document";
 import Logo from "../../icons/logo.svg";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Cross from "../../icons/Cross.svg";
+import Cross from "../../icons/cross.svg";
 import IconButton from "@mui/material/IconButton";
 
 export default function SideBar({ drawerOpen, toggleDrawer, updateLatestDoc }) {
