@@ -64,19 +64,19 @@ export default function Layout({
         ></Divider>
       )}
       <Grid item xs={12} sm>
+        <Tile title="PREVIEW">
+          <IconButton
+            size="small"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={() => toggleMarkdown(!markdownOpen)}
+          >
+            {markdownOpen ? <EyeOpen /> : <EyeClosed />}
+          </IconButton>
+        </Tile>
         {previewData && (matches || (!matches && !markdownOpen)) && (
           <>
-            <Tile title="PREVIEW">
-              <IconButton
-                size="small"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                onClick={() => toggleMarkdown(!markdownOpen)}
-              >
-                {markdownOpen ? <EyeOpen /> : <EyeClosed />}
-              </IconButton>
-            </Tile>
             <Preview>
               <div dangerouslySetInnerHTML={{ __html: previewData }}></div>
             </Preview>
